@@ -130,7 +130,33 @@ section{padding:75px 7%}
   transform:translateY(-4px);
   background:#ff8717;
 }
+.brand-list{
+  max-width:900px;
+  margin:35px auto 0;
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
 
+.brand-name{
+  background:linear-gradient(145deg,#174b70,#0b3558);
+  border:1px solid rgba(255,255,255,.18);
+  border-radius:16px;
+  padding:22px 10px;
+  text-align:center;
+  font-size:20px;
+  font-weight:800;
+  letter-spacing:1px;
+  color:#fff;
+  box-shadow:0 8px 20px rgba(0,0,0,.12);
+  transition:.25s;
+}
+
+.brand-name:hover{
+  transform:translateY(-5px);
+  background:#ff8717;
+  box-shadow:0 12px 25px rgba(0,0,0,.20);
+}
 .products{
   display:grid;
   grid-template-columns:repeat(3,1fr);
