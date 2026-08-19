@@ -1,494 +1,84 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ku" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>جیهانی گیزەری دانا | DS Water Heater</title>
-
-<style>
-*{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{
-  font-family:Arial,Tahoma,sans-serif;
-  background:#f7f8fa;
-  color:#172b3a;
-  line-height:1.7;
-}
-header{
-  position:sticky;
-  top:0;
-  z-index:1000;
-  background:rgba(11,53,88,.97);
-  color:white;
-  padding:13px 6%;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:24px;
-  border-bottom:1px solid rgba(255,255,255,.10);
-  box-shadow:0 6px 24px rgba(0,0,0,.12);
-  backdrop-filter:blur(12px);
-}
-.brand{font-size:23px;font-weight:800}
-nav{display:flex;gap:25px}
-nav a{color:white;text-decoration:none;font-weight:700}
-.languages{display:flex;gap:7px}
-.languages button{
-  border:0;border-radius:8px;
-  padding:8px 12px;
-  cursor:pointer;
-  background:#ff8b18;color:#fff;font-weight:bold;
-}
-
-.hero{
-  min-height:620px;
-  padding:80px 7%;
-  display:grid;
-  grid-template-columns:1.15fr .85fr;
-  align-items:center;
-  gap:70px;
-  background:linear-gradient(135deg,#ffffff 0%,#f3f8fc 55%,#e9f2f8 100%);
-}
-  
-.hero h1{
-  font-size:54px;
-  line-height:1.25;
-  color:#0b416b;
-  margin-bottom:20px;
-}
-.hero p{font-size:20px;color:#526676;margin-bottom:30px}
-.cta{
-  display:inline-block;
-  padding:14px 25px;
-  background:#ff8717;
-  color:#fff;text-decoration:none;
-  border-radius:10px;font-weight:800;
-}
-
-.hero-logos{
-  display:grid;
-  grid-template-columns:1fr 1fr;
-  gap:28px;
-  align-items:center;
-}
-
-.hero-logo{
-  background:rgba(255,255,255,.88);
-  min-height:230px;
-  border:1px solid rgba(11,65,107,.08);
-  border-radius:24px;
-  padding:24px;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  box-shadow:0 14px 40px rgba(11,65,107,.10);
-  transition:transform .3s ease,box-shadow .3s ease;
-}
-
-.hero-logo:hover{
-  transform:translateY(-6px);
-  box-shadow:0 20px 50px rgba(11,65,107,.16);
-}
-
-.hero-logo img{
-  width:100%;
-  max-height:175px;
-  object-fit:contain;
-  transition:transform .3s ease;
-}
-
-.hero-logo:hover img{
-  transform:scale(1.04);
-}
-
-section{padding:75px 7%}
-.title{text-align:center;color:#0b416b;font-size:36px;margin-bottom:12px}
-.subtitle{
-  max-width:760px;margin:0 auto 45px;
-  text-align:center;color:#647583;font-size:18px;
-}
-
-.main-brands{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:28px;
-  max-width:1050px;margin:auto;
-}
-.main-brand{
-  background:white;border-radius:22px;
-  padding:30px;text-align:center;
-  box-shadow:0 8px 28px #1231;
-  border:1px solid #e8edf1;
-}
-.main-brand img{
-  width:100%;height:220px;object-fit:contain;
-  margin-bottom:20px;
-}
-.badge{
-  display:inline-block;
-  background:#ff8717;color:white;
-  padding:7px 16px;border-radius:50px;
-  font-weight:bold;margin-bottom:12px;
-}
-.main-brand h3{font-size:25px;color:#0b416b}
-
-.other-brands{background:#0b3558;color:white}
-.other-brands .title{color:white}
-.other-brands .subtitle{color:#d8e3eb}
-.brand-list{
-  max-width:1050px;margin:auto;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:15px;
-}
-.brand-name{
-  background:#ffffff10;
-  border:1px solid #ffffff25;
-  border-radius:14px;
-  padding:24px 10px;
-  text-align:center;
-  font-size:20px;font-weight:800;
-  transition:.2s;
-}
-.brand-name:hover{
-  transform:translateY(-4px);
-  background:#ff8717;
-}
-.brand-list{
-  max-width:900px;
-  margin:35px auto 0;
-  display:grid;
-  grid-template-columns:repeat(4,1fr);
-  gap:16px;
-}
-
-.brand-name{
-  background:linear-gradient(145deg,#174b70,#0b3558);
-  border:1px solid rgba(255,255,255,.18);
-  border-radius:16px;
-  padding:22px 10px;
-  text-align:center;
-  font-size:20px;
-  font-weight:800;
-  letter-spacing:1px;
-  color:#fff;
-  box-shadow:0 8px 20px rgba(0,0,0,.12);
-  transition:.25s;
-}
-
-.brand-name:hover{
-  transform:translateY(-5px);
-  background:#ff8717;
-  box-shadow:0 12px 25px rgba(0,0,0,.20);
-}
-.products{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:32px;
-}
-
-.product{
-  background:rgba(255,255,255,.94);
-  border:1px solid rgba(11,65,107,.08);
-  border-radius:26px;
-  padding:42px 30px;
-  text-align:center;
-  box-shadow:0 14px 40px rgba(11,65,107,.10);
-  transition:transform .3s ease,box-shadow .3s ease,border-color .3s ease;
-}
-
-.product:hover{
-  transform:translateY(-8px);
-  box-shadow:0 20px 45px rgba(11,65,107,.18);
-  border-color:rgba(255,135,23,.35);
-}
-
-.product-icon{
-  font-size:58px;
-  margin-bottom:15px;
-  display:block;
-  transition:transform .3s ease;
-}
-
-.product:hover .product-icon{
-  transform:scale(1.08);
-}
-
-.product h3{
-  font-size:22px;
-  color:#0b416b;
-  margin:10px 0 12px;
-  font-weight:800;
-}
-
-.product p{
-  color:#5d7182;
-  line-height:1.9;
-}
-.contact{
-  background:linear-gradient(180deg,#f4f8fb 0%,#eaf2f7 100%);
-  text-align:center;
-}
-
-.contact-box{
-  max-width:850px;
-  margin:auto;
-  background:linear-gradient(145deg,#ffffff,#f8fbfd);
-  padding:40px 35px;
-  border:1px solid rgba(11,65,107,.08);
-  border-radius:22px;
-  box-shadow:0 12px 35px rgba(11,65,107,.10);
-  transition:transform .3s ease,box-shadow .3s ease;
-}
-
-.contact-box:hover{
-  transform:translateY(-5px);
-  box-shadow:0 18px 45px rgba(11,65,107,.16);
-}
-
-footer{
-  background:#071f33;
-  color:#dfe8ee;
-  padding:28px 7%;
-  text-align:center;
-}
-
-@media(max-width:850px){
-  header{flex-wrap:wrap;justify-content:center}
-  nav{order:3;width:100%;justify-content:center;gap:12px;flex-wrap:wrap}
-  .hero{grid-template-columns:1fr;text-align:center;padding-top:50px}
-  .hero h1{font-size:38px}
-  .main-brands,.products{grid-template-columns:1fr}
-  .brand-list{grid-template-columns:repeat(2,1fr)}
-  .products{grid-template-columns:1fr;gap:20px}
-.product{padding:30px 20px}
-}
-  
-@media(max-width:500px){
-  .hero-logos{grid-template-columns:1fr}
-  .brand-list{grid-template-columns:1fr}
-}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Dana Water Heater World - GENERAL HOT and HOT SEA BOILER water heaters.">
+  <title>جیهانی گیزەری دانا | DS Water Heater</title>
+  <style>
+    :root{--navy:#082f4d;--blue:#0b416b;--orange:#f47b20;--ink:#173144;--muted:#607586;--line:#dfe8ee;--paper:#fff;--bg:#f4f7f9;--radius:22px;--shadow:0 16px 42px rgba(8,47,77,.10)}
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth;scroll-padding-top:110px}
+    body{font-family:Arial,Tahoma,sans-serif;background:var(--bg);color:var(--ink);line-height:1.7}
+    button,a{font:inherit}
+    img{display:block;max-width:100%}
+    .container{width:min(1180px,88%);margin-inline:auto}
+    .site-header{position:sticky;top:0;z-index:20;background:rgba(8,47,77,.96);color:#fff;box-shadow:0 8px 28px #061d2e33;backdrop-filter:blur(14px)}
+    .header-inner{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{color:#fff;text-decoration:none;font-size:clamp(1rem,2vw,1.35rem);font-weight:900;white-space:nowrap}
+    .nav{display:flex;align-items:center;gap:22px}
+    .nav a{color:#eaf3f8;text-decoration:none;font-weight:700;font-size:.95rem}.nav a:hover{color:#ffab62}
+    .languages{display:flex;gap:6px}.languages button{border:1px solid #ffffff42;background:#ffffff12;color:#fff;border-radius:9px;padding:7px 10px;cursor:pointer;font-weight:800}.languages button.active,.languages button:hover{background:var(--orange);border-color:var(--orange)}
+    .hero{min-height:600px;display:grid;align-items:center;background:linear-gradient(135deg,#fff 0%,#f2f7fa 55%,#e6f0f5 100%);overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:64px;padding-block:70px}
+    .eyebrow{display:inline-flex;align-items:center;gap:8px;color:var(--orange);font-weight:900;letter-spacing:.04em;margin-bottom:14px}.eyebrow:before{content:"";width:32px;height:3px;background:currentColor;border-radius:2px}
+    h1{font-size:clamp(2.5rem,5vw,4.3rem);line-height:1.15;color:var(--blue);margin-bottom:20px}.hero p{font-size:clamp(1.05rem,2vw,1.25rem);color:var(--muted);max-width:650px;margin-bottom:30px}
+    .cta{display:inline-flex;align-items:center;justify-content:center;background:var(--orange);color:#fff;text-decoration:none;border-radius:12px;padding:13px 23px;font-weight:900;box-shadow:0 10px 24px #f47b2040}.cta:hover{transform:translateY(-2px)}
+    .hero-placeholder{min-height:390px;border:2px dashed #0b416b2e;border-radius:30px;background:linear-gradient(145deg,#ffffffc9,#eaf2f6);display:grid;place-items:center;text-align:center;padding:38px;box-shadow:var(--shadow)}
+    .placeholder-logos{display:grid;grid-template-columns:1fr 1fr;gap:20px;width:100%;align-items:center}.placeholder-logos figure{height:190px;background:#fff;border-radius:18px;display:grid;place-items:center;padding:20px;border:1px solid var(--line)}.placeholder-logos img{max-height:145px;object-fit:contain}.placeholder-note{grid-column:1/-1;color:var(--muted);font-size:.9rem}
+    section{padding-block:90px}.section-head{text-align:center;max-width:780px;margin:0 auto 44px}.section-head h2{font-size:clamp(2rem,4vw,2.8rem);line-height:1.25;color:var(--blue);margin-bottom:12px}.section-head p{color:var(--muted);font-size:1.06rem}
+    .official-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px}.brand-card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:28px;text-align:center;box-shadow:var(--shadow)}.brand-card img{height:190px;width:100%;object-fit:contain;margin-bottom:22px}.badge{display:inline-block;background:#fff0e3;color:#b94e00;border-radius:999px;padding:5px 13px;font-size:.85rem;font-weight:900;margin-bottom:8px}.brand-card h3{font-size:1.45rem;color:var(--blue)}
+    .general{background:#fff}.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}.category{background:linear-gradient(180deg,#fff,#f9fbfc);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}.category-icon{width:54px;height:54px;display:grid;place-items:center;background:#fff0e3;border-radius:15px;font-size:1.65rem;margin-bottom:18px}.category h3{font-size:1.35rem;color:var(--blue);margin-bottom:7px}.category>p{color:var(--muted);margin-bottom:18px}.model-list{list-style:none;display:flex;flex-wrap:wrap;gap:9px}.model-list li{background:#edf4f7;color:#244b63;border:1px solid #d6e4eb;padding:7px 11px;border-radius:10px;font-weight:800;font-size:.9rem}
+    .series{margin-top:30px;background:var(--navy);color:#fff;border-radius:var(--radius);padding:28px}.series h3{font-size:1.3rem;margin-bottom:14px}.series-list{display:flex;flex-wrap:wrap;gap:10px}.series-list span{border:1px solid #ffffff33;background:#ffffff10;border-radius:999px;padding:8px 14px;font-weight:800}
+    .future{background:linear-gradient(135deg,#092f4d,#0b416b);color:#fff}.future .section-head h2{color:#fff}.future .section-head p{color:#d7e5ed}.future-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:26px;margin-bottom:34px}.future-card{border:1px solid #ffffff2b;background:#ffffff0d;border-radius:var(--radius);padding:30px;text-align:center}.future-card img{height:135px;width:100%;object-fit:contain;margin-bottom:18px;filter:drop-shadow(0 8px 18px #0003)}.future-card h3{font-size:1.35rem;margin-bottom:6px}.future-card p{color:#d7e5ed}.brand-list{display:grid;grid-template-columns:repeat(7,1fr);gap:10px}.brand-name{border:1px solid #ffffff29;background:#ffffff0c;border-radius:12px;padding:15px 8px;text-align:center;font-weight:900;letter-spacing:.03em}
+    .contact{text-align:center}.contact-box{max-width:850px;margin:auto;background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:36px;box-shadow:var(--shadow);color:var(--muted)}
+    footer{background:#061f33;color:#dce7ed;text-align:center;padding:26px 6%}
+    [dir="ltr"] .eyebrow:before{order:0}
+    @media(max-width:980px){.header-inner{flex-wrap:wrap;padding-block:12px}.nav{order:3;width:100%;justify-content:center;flex-wrap:wrap}.hero-grid{grid-template-columns:1fr;gap:38px;text-align:center}.hero p{margin-inline:auto}.eyebrow{justify-content:center}.category-grid{grid-template-columns:1fr 1fr}.brand-list{grid-template-columns:repeat(4,1fr)}}
+    @media(max-width:680px){.container{width:min(92%,1180px)}.header-inner{justify-content:center}.brand{width:100%;text-align:center}.nav{gap:12px}.nav a{font-size:.82rem}.languages button{padding:6px 8px;font-size:.78rem}.hero{min-height:auto}.hero-grid{padding-block:48px}.placeholder-logos{grid-template-columns:1fr}.placeholder-note{grid-column:auto}.official-grid,.category-grid,.future-grid{grid-template-columns:1fr}.brand-list{grid-template-columns:repeat(2,1fr)}section{padding-block:64px}.series{padding:22px}}
+  </style>
 </head>
-
 <body>
-
-<header>
-  <div class="brand" id="brand">جیهانی گیزەری دانا</div>
-
-  <nav>
-    <a href="#home" id="navHome">سەرەکی</a>
-    <a href="#official" id="navOfficial">بڕاندە سەرەکییەکان</a>
-    <a href="#brands" id="navBrands">بڕاندەکان</a>
-    <a href="#products" id="navProducts">بەرهەمەکان</a>
-    <a href="#contact" id="navContact">پەیوەندی</a>
-  </nav>
-
-  <div class="languages">
-    <button onclick="setLang('ku')">کوردی</button>
-    <button onclick="setLang('ar')">العربية</button>
-    <button onclick="setLang('en')">English</button>
-  </div>
-</header>
-
-<section class="hero" id="home">
-  <div>
-    <h1 id="heroTitle">جیهانی گیزەری دانا</h1>
-    <p id="heroText">
-      پێشکەشکردنی جۆرەها گیزەری کوالێتی بەرز بۆ ماڵ، کۆمپانیا و پڕۆژەکان.
-    </p>
-    <a href="#official" class="cta" id="heroBtn">بینینی بڕاندەکان</a>
-  </div>
-
-  <div class="hero-logos">
-    <div class="hero-logo">
-      <img src="b4a284b6-c231-47a8-9437-3c1e78d34de5.jpg" alt="General Hot">
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="#home" data-i18n="brand">جیهانی گیزەری دانا</a>
+      <nav class="nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">سەرەکی</a><a href="#official" data-i18n="navOfficial">بڕاندە سەرەکییەکان</a><a href="#general" data-i18n="navProducts">GENERAL HOT</a><a href="#brands" data-i18n="navBrands">بڕاندەکان</a><a href="#contact" data-i18n="navContact">پەیوەندی</a>
+      </nav>
+      <div class="languages" aria-label="Language selector"><button type="button" data-lang="ku" class="active">کوردی</button><button type="button" data-lang="ar">العربية</button><button type="button" data-lang="en">English</button></div>
     </div>
+  </header>
 
-    <div class="hero-logo">
-      <img src="5202207849872825584.jpg" alt="Hot Sea Boiler">
-    </div>
-  </div>
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-grid">
+        <div><div class="eyebrow">DS WATER HEATER</div><h1 data-i18n="heroTitle">جیهانی گیزەری دانا</h1><p data-i18n="heroText">جۆرەها گیزەری GENERAL HOT بۆ پێداویستییە جیاوازەکان.</p><a class="cta" href="#general" data-i18n="heroBtn">بینینی بەرهەمەکان</a></div>
+        <div class="hero-placeholder" aria-label="Hero placeholder"><div class="placeholder-logos"><figure><img src="b4a284b6-c231-47a8-9437-3c1e78d34de5.jpg" alt="GENERAL HOT logo"></figure><figure><img src="5202207849872825584.jpg" alt="HOT SEA BOILER logo"></figure><p class="placeholder-note" data-i18n="heroNote">شوێنی Hero ـی نوێ - دواتر جێگیر دەکرێت.</p></div></div>
+      </div>
+    </section>
 
-<section id="official">
-  <h2 class="title" id="officialTitle">بڕاندە سەرەکییەکان</h2>
-  <p class="subtitle" id="officialSub">
-    جیهانی گیزەری دانا بریکاری سەرەکی GENERAL HOT و HOT SEA BOILER ـە.
-  </p>
+    <section id="official"><div class="container"><div class="section-head"><h2 data-i18n="officialTitle">بڕاندە سەرەکییەکان</h2><p data-i18n="officialSub">GENERAL HOT ئێستا تەواو کراوە؛ HOT SEA BOILER بۆ قۆناغی داهاتوو بەجێهێڵراوە.</p></div><div class="official-grid"><article class="brand-card"><img src="b4a284b6-c231-47a8-9437-3c1e78d34de5.jpg" alt="GENERAL HOT"><span class="badge" data-i18n="integrated">بەرهەمەکان زیاد کران</span><h3>GENERAL HOT</h3></article><article class="brand-card"><img src="5202207849872825584.jpg" alt="HOT SEA BOILER"><span class="badge" data-i18n="coming">بۆ قۆناغی داهاتوو</span><h3>HOT SEA BOILER</h3></article></div></div></section>
 
-  <div class="main-brands">
-    <div class="main-brand">
-      <img src="b4a284b6-c231-47a8-9437-3c1e78d34de5.jpg" alt="General Hot">
-      <span class="badge" id="badge1">بریکاری سەرەکی</span>
-      <h3>GENERAL HOT</h3>
-    </div>
+    <section class="general" id="general"><div class="container"><div class="section-head"><h2>GENERAL HOT</h2><p data-i18n="generalSub">بەرهەم و مۆدێلەکان بەپێی زانیارییەکانی کاتەلۆگی GENERAL HOT.</p></div><div class="category-grid">
+      <article class="category"><div class="category-icon">🔥</div><h3 data-i18n="gasTitle">گیزەری غازی</h3><p data-i18n="gasText">Standard، Turbo و Smart.</p><ul class="model-list"><li>14L</li><li>16L</li><li>20L</li></ul></article>
+      <article class="category"><div class="category-icon">⚡</div><h3 data-i18n="electricTitle">گیزەری کارەبایی</h3><p data-i18n="electricText">دوو هەڵبژاردەی پشتڕاستکراو لە کاتەلۆگەکە.</p><ul class="model-list"><li>2M · 8BAR</li><li>3M · 12BAR</li></ul></article>
+      <article class="category"><div class="category-icon">◐</div><h3 data-i18n="dualTitle">گیزەری دوو سیستەم</h3><p data-i18n="dualText">سیستەمی غاز و کارەبا لە یەک گیزەردا.</p><ul class="model-list"><li data-i18n="gasElectric">غاز + کارەبا</li></ul></article>
+    </div><div class="series"><h3 data-i18n="catalogModels">مۆدێلەکانی ناوبراو لە کاتەلۆگەکە</h3><div class="series-list"><span>13L Saving Series</span><span>16L Saving Series</span><span>22L Smart Control</span><span>Standard</span><span>Turbo</span><span>Smart</span></div></div></div></section>
 
-    <div class="main-brand">
-      <img src="5202207849872825584.jpg" alt="Hot Sea Boiler">
-      <span class="badge" id="badge2">بریکاری سەرەکی</span>
-      <h3>HOT SEA BOILER</h3>
-    </div>
-  </div>
-</section>
+    <section class="future" id="brands"><div class="container"><div class="section-head"><h2 data-i18n="futureTitle">بڕاندەکانی قۆناغی داهاتوو</h2><p data-i18n="futureSub">ئەم بەشانە پارێزراون تا وێنە و زانیارییەکانیان دواتر زیاد بکرێت.</p></div><div class="future-grid"><article class="future-card"><img src="5202207849872825584.jpg" alt="HOT SEA BOILER"><h3>HOT SEA BOILER</h3><p data-i18n="awaiting">چاوەڕوانی ماتریاڵی بەرهەمەکانە.</p></article><article class="future-card"><h3 data-i18n="otherBrands">بڕاندەکانی تر</h3><p data-i18n="awaiting">چاوەڕوانی ماتریاڵی بەرهەمەکانە.</p></article></div><div class="brand-list"><div class="brand-name">AMIGO</div><div class="brand-name">EVERHOT</div><div class="brand-name">FURAT</div><div class="brand-name">POLO</div><div class="brand-name">GLOBAL</div><div class="brand-name">ASHTAR</div><div class="brand-name">EVA</div></div></div></section>
 
-<section class="other-brands" id="brands">
-  <h2 class="title" id="brandsTitle">بڕاندەکانمان</h2>
-  <p class="subtitle" id="brandsSub">جۆرەها بڕاندی گیزەر لە یەک شوێن.</p>
-
-  <div class="brand-list">
-    <div class="brand-name">AMIGO</div>
-    <div class="brand-name">EVERHOT</div>
-    <div class="brand-name">FURAT</div>
-    <div class="brand-name">POLO</div>
-    <div class="brand-name">GLOBAL</div>
-    <div class="brand-name">ASHTAR</div>
-    <div class="brand-name">EVA</div>
-  </div>
-</section>
-
-<section id="products">
-  <h2 class="title" id="productsTitle">جۆری بەرهەمەکان</h2>
-  <p class="subtitle" id="productsSub">هەڵبژاردەی جۆراوجۆر بەپێی پێویستی بەکارهێنان.</p>
-
-  <div class="products">
-    <div class="product">
-      <div class="product-icon">🔥</div>
-      <h3 id="gasTitle">گیزەری غازی</h3>
-      <p id="gasText">جۆر و قەبارەی جۆراوجۆر بۆ ماڵ و شوێنی بازرگانی.</p>
-    </div>
-
-    <div class="product">
-      <div class="product-icon">⚡</div>
-      <h3 id="electricTitle">گیزەری کارەبایی</h3>
-      <p id="electricText">هەڵبژاردەی جۆراوجۆر لە گیزەری کارەبایی.</p>
-    </div>
-
-    <div class="product">
-      <div class="product-icon">🔥⚡</div>
-      <h3 id="dualTitle">گیزەری دوو سیستەم</h3>
-      <p id="dualText">سیستەمی غاز و کارەبا لە یەک گیزەردا.</p>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <h2 class="title" id="contactTitle">پەیوەندی بە ئێمەوە</h2>
-  <div class="contact-box">
-    <p id="contactText">
-      ژمارەی تەلەفۆن، WhatsApp، ناونیشان و سۆشیال میدیا لێرە زیاد دەکرێت.
-    </p>
-  </div>
-</section>
-
-<footer id="footerText">
-© 2026 جیهانی گیزەری دانا — هەموو مافەکان پارێزراون
-</footer>
-
-<script>
-const T={
-ku:{
-dir:"rtl",
-brand:"جیهانی گیزەری دانا",
-navHome:"سەرەکی",
-navOfficial:"بڕاندە سەرەکییەکان",
-navBrands:"بڕاندەکان",
-navProducts:"بەرهەمەکان",
-navContact:"پەیوەندی",
-heroTitle:"جیهانی گیزەری دانا",
-heroText:"پێشکەشکردنی جۆرەها گیزەری کوالێتی بەرز بۆ ماڵ، کۆمپانیا و پڕۆژەکان.",
-heroBtn:"بینینی بڕاندەکان",
-officialTitle:"بڕاندە سەرەکییەکان",
-officialSub:"جیهانی گیزەری دانا بریکاری سەرەکی GENERAL HOT و HOT SEA BOILER ـە.",
-badge1:"بریکاری سەرەکی",
-badge2:"بریکاری سەرەکی",
-brandsTitle:"بڕاندەکانمان",
-brandsSub:"جۆرەها بڕاندی گیزەر لە یەک شوێن.",
-productsTitle:"جۆری بەرهەمەکان",
-productsSub:"هەڵبژاردەی جۆراوجۆر بەپێی پێویستی بەکارهێنان.",
-gasTitle:"گیزەری غازی",
-gasText:"جۆر و قەبارەی جۆراوجۆر بۆ ماڵ و شوێنی بازرگانی.",
-electricTitle:"گیزەری کارەبایی",
-electricText:"هەڵبژاردەی جۆراوجۆر لە گیزەری کارەبایی.",
-dualTitle:"گیزەری دوو سیستەم",
-dualText:"سیستەمی غاز و کارەبا لە یەک گیزەردا.",
-contactTitle:"پەیوەندی بە ئێمەوە",
-contactText:"ژمارەی تەلەفۆن، WhatsApp، ناونیشان و سۆشیال میدیا لێرە زیاد دەکرێت.",
-footerText:"© 2026 جیهانی گیزەری دانا — هەموو مافەکان پارێزراون"
-},
-
-ar:{
-dir:"rtl",
-brand:"عالم سخانات دانا",
-navHome:"الرئيسية",
-navOfficial:"العلامات الرئيسية",
-navBrands:"العلامات التجارية",
-navProducts:"المنتجات",
-navContact:"اتصل بنا",
-heroTitle:"عالم سخانات دانا",
-heroText:"مجموعة متنوعة من سخانات المياه عالية الجودة للمنازل والشركات والمشاريع.",
-heroBtn:"عرض العلامات التجارية",
-officialTitle:"العلامات الرئيسية",
-officialSub:"عالم سخانات دانا هو الوكيل الرئيسي لـ GENERAL HOT و HOT SEA BOILER.",
-badge1:"الوكيل الرئيسي",
-badge2:"الوكيل الرئيسي",
-brandsTitle:"علاماتنا التجارية",
-brandsSub:"مجموعة متنوعة من العلامات التجارية في مكان واحد.",
-productsTitle:"أنواع المنتجات",
-productsSub:"خيارات متعددة حسب احتياجات الاستخدام.",
-gasTitle:"سخانات الغاز",
-gasText:"موديلات وأحجام مختلفة للاستخدام المنزلي والتجاري.",
-electricTitle:"السخانات الكهربائية",
-electricText:"مجموعة متنوعة من سخانات المياه الكهربائية.",
-dualTitle:"النظام المزدوج",
-dualText:"نظام الغاز والكهرباء في سخان واحد.",
-contactTitle:"اتصل بنا",
-contactText:"سيتم إضافة الهاتف وWhatsApp والعنوان ووسائل التواصل الاجتماعي هنا.",
-footerText:"© 2026 عالم سخانات دانا — جميع الحقوق محفوظة"
-},
-
-en:{
-dir:"ltr",
-brand:"Dana Water Heater World",
-navHome:"Home",
-navOfficial:"Main Brands",
-navBrands:"Brands",
-navProducts:"Products",
-navContact:"Contact",
-heroTitle:"Dana Water Heater World",
-heroText:"A wide range of high-quality water heaters for homes, companies and projects.",
-heroBtn:"Explore Brands",
-officialTitle:"Main Brands",
-officialSub:"Dana Water Heater World is the main agent for GENERAL HOT and HOT SEA BOILER.",
-badge1:"Main Agent",
-badge2:"Main Agent",
-brandsTitle:"Our Brands",
-brandsSub:"A wide selection of water-heater brands in one place.",
-productsTitle:"Product Categories",
-productsSub:"Different options for different requirements.",
-gasTitle:"Gas Water Heaters",
-gasText:"Various models and sizes for residential and commercial use.",
-electricTitle:"Electric Water Heaters",
-electricText:"A wide selection of electric water heaters.",
-dualTitle:"Dual-System Water Heaters",
-dualText:"Gas and electric systems combined in one water heater.",
-contactTitle:"Contact Us",
-contactText:"Phone, WhatsApp, address and social media information will be added here.",
-footerText:"© 2026 Dana Water Heater World — All Rights Reserved"
-}
-};
-
-function setLang(lang){
- const t=T[lang];
- document.documentElement.lang=lang;
- document.documentElement.dir=t.dir;
- Object.keys(t).forEach(k=>{
-   if(k==="dir")return;
-   const e=document.getElementById(k);
-   if(e)e.textContent=t[k];
- });
-}
-</script>
-
+    <section class="contact" id="contact"><div class="container"><div class="section-head"><h2 data-i18n="contactTitle">پەیوەندی بە ئێمەوە</h2></div><div class="contact-box"><p data-i18n="contactText">ژمارەی تەلەفۆن، WhatsApp، ناونیشان و سۆشیال میدیا دواتر لێرە زیاد دەکرێت.</p></div></div></section>
+  </main>
+  <footer data-i18n="footer">© 2026 جیهانی گیزەری دانا - هەموو مافەکان پارێزراون</footer>
+  <script>
+    const translations={
+      ku:{dir:"rtl",title:"جیهانی گیزەری دانا | DS Water Heater",brand:"جیهانی گیزەری دانا",navHome:"سەرەکی",navOfficial:"بڕاندە سەرەکییەکان",navProducts:"GENERAL HOT",navBrands:"بڕاندەکان",navContact:"پەیوەندی",heroTitle:"جیهانی گیزەری دانا",heroText:"جۆرەها گیزەری GENERAL HOT بۆ پێداویستییە جیاوازەکان.",heroBtn:"بینینی بەرهەمەکان",heroNote:"شوێنی Hero ـی نوێ - دواتر جێگیر دەکرێت.",officialTitle:"بڕاندە سەرەکییەکان",officialSub:"GENERAL HOT ئێستا تەواو کراوە؛ HOT SEA BOILER بۆ قۆناغی داهاتوو بەجێهێڵراوە.",integrated:"بەرهەمەکان زیاد کران",coming:"بۆ قۆناغی داهاتوو",generalSub:"بەرهەم و مۆدێلەکان بەپێی زانیارییەکانی کاتەلۆگی GENERAL HOT.",gasTitle:"گیزەری غازی",gasText:"Standard، Turbo و Smart.",electricTitle:"گیزەری کارەبایی",electricText:"دوو هەڵبژاردەی پشتڕاستکراو لە کاتەلۆگەکە.",dualTitle:"گیزەری دوو سیستەم",dualText:"سیستەمی غاز و کارەبا لە یەک گیزەردا.",gasElectric:"غاز + کارەبا",catalogModels:"مۆدێلەکانی ناوبراو لە کاتەلۆگەکە",futureTitle:"بڕاندەکانی قۆناغی داهاتوو",futureSub:"ئەم بەشانە پارێزراون تا وێنە و زانیارییەکانیان دواتر زیاد بکرێت.",awaiting:"چاوەڕوانی ماتریاڵی بەرهەمەکانە.",otherBrands:"بڕاندەکانی تر",contactTitle:"پەیوەندی بە ئێمەوە",contactText:"ژمارەی تەلەفۆن، WhatsApp، ناونیشان و سۆشیال میدیا دواتر لێرە زیاد دەکرێت.",footer:"© 2026 جیهانی گیزەری دانا - هەموو مافەکان پارێزراون"},
+      ar:{dir:"rtl",title:"عالم سخانات دانا | DS Water Heater",brand:"عالم سخانات دانا",navHome:"الرئيسية",navOfficial:"العلامات الرئيسية",navProducts:"GENERAL HOT",navBrands:"العلامات",navContact:"اتصل بنا",heroTitle:"عالم سخانات دانا",heroText:"مجموعة من سخانات GENERAL HOT لتلبية احتياجات مختلفة.",heroBtn:"عرض المنتجات",heroNote:"مساحة الصورة الرئيسية الجديدة - ستضاف لاحقاً.",officialTitle:"العلامات الرئيسية",officialSub:"تم استكمال GENERAL HOT، بينما بقي HOT SEA BOILER للمرحلة التالية.",integrated:"تمت إضافة المنتجات",coming:"للمرحلة التالية",generalSub:"المنتجات والموديلات وفق المعلومات الواردة في كتالوج GENERAL HOT.",gasTitle:"سخانات الغاز",gasText:"Standard وTurbo وSmart.",electricTitle:"السخانات الكهربائية",electricText:"خياران موثقان في الكتالوج.",dualTitle:"سخانات بنظام مزدوج",dualText:"نظام الغاز والكهرباء في سخان واحد.",gasElectric:"غاز + كهرباء",catalogModels:"الموديلات المذكورة في الكتالوج",futureTitle:"علامات المرحلة التالية",futureSub:"تم حفظ هذه الأقسام لإضافة الصور والمعلومات لاحقاً.",awaiting:"بانتظار مواد المنتجات.",otherBrands:"العلامات الأخرى",contactTitle:"اتصل بنا",contactText:"سيتم إضافة الهاتف وWhatsApp والعنوان ووسائل التواصل هنا لاحقاً.",footer:"© 2026 عالم سخانات دانا - جميع الحقوق محفوظة"},
+      en:{dir:"ltr",title:"Dana Water Heater World | DS Water Heater",brand:"Dana Water Heater World",navHome:"Home",navOfficial:"Main Brands",navProducts:"GENERAL HOT",navBrands:"Brands",navContact:"Contact",heroTitle:"Dana Water Heater World",heroText:"A selection of GENERAL HOT water heaters for different requirements.",heroBtn:"Explore Products",heroNote:"New hero placeholder - to be replaced later.",officialTitle:"Main Brands",officialSub:"GENERAL HOT is now integrated; HOT SEA BOILER remains for the next phase.",integrated:"Products added",coming:"Next phase",generalSub:"Products and models based on the GENERAL HOT catalog information.",gasTitle:"Gas Water Heaters",gasText:"Standard, Turbo and Smart.",electricTitle:"Electric Water Heaters",electricText:"Two options confirmed in the catalog.",dualTitle:"Dual-System Water Heaters",dualText:"Gas and electric systems combined in one water heater.",gasElectric:"Gas + electric",catalogModels:"Models listed in the catalog",futureTitle:"Brands for the Next Phase",futureSub:"These sections are reserved for product images and information to be added later.",awaiting:"Awaiting product materials.",otherBrands:"Other Brands",contactTitle:"Contact Us",contactText:"Phone, WhatsApp, address and social media details will be added here later.",footer:"© 2026 Dana Water Heater World - All Rights Reserved"}
+    };
+    function setLanguage(lang){const t=translations[lang]||translations.ku;document.documentElement.lang=lang;document.documentElement.dir=t.dir;document.title=t.title;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(t[key])el.textContent=t[key]});document.querySelectorAll('[data-lang]').forEach(button=>button.classList.toggle('active',button.dataset.lang===lang));localStorage.setItem('ds-language',lang)}
+    document.querySelectorAll('[data-lang]').forEach(button=>button.addEventListener('click',()=>setLanguage(button.dataset.lang)));
+    setLanguage(localStorage.getItem('ds-language')||'ku');
+  </script>
 </body>
 </html>
