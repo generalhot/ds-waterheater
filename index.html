@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>جیهانی گیزەری دانا | DS Water Heater</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      font-family:Arial,sans-serif;
+      background:#f7f7f4;
+      color:#17324d;
+      line-height:1.6;
+    }
+    header{
+      background:#0f3d63;
+      color:white;
+      padding:18px 7%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:20px;
+      flex-wrap:wrap;
+    }
+    .brand{
+      font-size:24px;
+      font-weight:700;
+    }
+    nav a{
+      color:white;
+      text-decoration:none;
+      margin:0 12px;
+      font-weight:600;
+    }
+    .lang button{
+      border:0;
+      background:#f28c28;
+      color:white;
+      padding:8px 12px;
+      margin:3px;
+      border-radius:8px;
+      cursor:pointer;
+    }
+    .hero{
+      min-height:72vh;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:70px 7%;
+      gap:40px;
+      background:linear-gradient(135deg,#ffffff,#eef3f7);
+    }
+    .hero-text{
+      max-width:650px;
+    }
+    .hero h1{
+      font-size:46px;
+      margin-bottom:20px;
+      color:#0f3d63;
+    }
+    .hero p{
+      font-size:20px;
+      color:#4a5d6f;
+      margin-bottom:28px;
+    }
+    .cta{
+      display:inline-block;
+      background:#f28c28;
+      color:white;
+      text-decoration:none;
+      padding:14px 24px;
+      border-radius:10px;
+      font-weight:700;
+    }
+    .hero-card{
+      width:360px;
+      min-height:360px;
+      background:white;
+      border-radius:24px;
+      box-shadow:0 14px 40px rgba(0,0,0,.1);
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding:30px;
+      text-align:center;
+      color:#7d8c98;
+    }
+    section{
+      padding:70px 7%;
+    }
+    .section-title{
+      text-align:center;
+      margin-bottom:40px;
+      font-size:34px;
+      color:#0f3d63;
+    }
+    .products{
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:24px;
+    }
+    .card{
+      background:white;
+      border-radius:18px;
+      padding:28px;
+      box-shadow:0 8px 26px rgba(0,0,0,.07);
+      text-align:center;
+    }
+    .icon{
+      font-size:52px;
+      margin-bottom:14px;
+    }
+    .card h3{
+      margin-bottom:10px;
+      color:#0f3d63;
+    }
+    footer{
+      background:#0f3d63;
+      color:white;
+      text-align:center;
+      padding:24px;
+      margin-top:40px;
+    }
+    @media(max-width:800px){
+      .hero{
+        flex-direction:column;
+        text-align:center;
+      }
+      .hero h1{font-size:34px}
+      .hero-card{width:100%}
+      .products{grid-template-columns:1fr}
+      nav{width:100%;text-align:center}
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand" id="brand">جیهانی گیزەری دانا</div>
+
+  <nav>
+    <a href="#home" id="navHome">سەرەکی</a>
+    <a href="#products" id="navProducts">بەرهەمەکان</a>
+    <a href="#about" id="navAbout">دەربارەی ئێمە</a>
+    <a href="#contact" id="navContact">پەیوەندی</a>
+  </nav>
+
+  <div class="lang">
+    <button onclick="setLanguage('ku')">کوردی</button>
+    <button onclick="setLanguage('ar')">العربية</button>
+    <button onclick="setLanguage('en')">English</button>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="home">
+    <div class="hero-text">
+      <h1 id="heroTitle">جیهانی گیزەری دانا</h1>
+      <p id="heroText">
+        گیزەری کوالێتی بەرز بۆ ماڵ و پڕۆژەکان، بە هەڵبژاردەی جۆراوجۆر لە سیستەمی غازی و کارەبایی.
+      </p>
+      <a class="cta" href="#products" id="heroButton">بینینی بەرهەمەکان</a>
+    </div>
+
+    <div class="hero-card" id="heroImageText">
+      شوێنی وێنەی سەرەکی گیزەر
+    </div>
+  </section>
+
+  <section id="products">
+    <h2 class="section-title" id="productsTitle">بەرهەمەکانمان</h2>
+
+    <div class="products">
+      <div class="card">
+        <div class="icon">🔥</div>
+        <h3 id="gasTitle">گیزەری غازی</h3>
+        <p id="gasText">هەڵبژاردەی جۆراوجۆر بۆ بەکارهێنانی ماڵ و شوێنی بازرگانی.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">⚡</div>
+        <h3 id="electricTitle">گیزەری کارەبایی</h3>
+        <p id="electricText">سیستەمی کارەبایی بە کوالێتی بەرز و دیزاینی گونجاو.</p>
+      </div>
+
+      <div class="card">
+        <div class="icon">🔥⚡</div>
+        <h3 id="dualTitle">دوو سیستەم</h3>
+        <p id="dualText">گیزەری غازی و کارەبایی بۆ بەکارهێنانی زیاتر و ئاسانتر.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2 class="section-title" id="aboutTitle">دەربارەی ئێمە</h2>
+    <p id="aboutText" style="max-width:850px;margin:auto;text-align:center;font-size:18px;color:#4a5d6f">
+      جیهانی گیزەری دانا پێشکەشکاری جۆرەها گیزەری کوالێتی بەرزە، بۆ ماڵ، کۆمپانیا و پڕۆژەکان.
+    </p>
+  </section>
+
+  <section id="contact">
+    <h2 class="section-title" id="contactTitle">پەیوەندی</h2>
+    <div class="card" style="max-width:700px;margin:auto">
+      <p id="contactText">زانیاری ژمارەی تەلەفۆن، ناونیشان و سۆشیال میدیا لێرە دادەنرێت.</p>
+    </div>
+  </section>
+</main>
+
+<footer id="footerText">
+  © 2026 جیهانی گیزەری دانا - هەموو مافەکان پارێزراون
+</footer>
+
+<script>
+const translations = {
+  ku:{
+    dir:"rtl",
+    brand:"جیهانی گیزەری دانا",
+    navHome:"سەرەکی",
+    navProducts:"بەرهەمەکان",
+    navAbout:"دەربارەی ئێمە",
+    navContact:"پەیوەندی",
+    heroTitle:"جیهانی گیزەری دانا",
+    heroText:"گیزەری کوالێتی بەرز بۆ ماڵ و پڕۆژەکان، بە هەڵبژاردەی جۆراوجۆر لە سیستەمی غازی و کارەبایی.",
+    heroButton:"بینینی بەرهەمەکان",
+    heroImageText:"شوێنی وێنەی سەرەکی گیزەر",
+    productsTitle:"بەرهەمەکانمان",
+    gasTitle:"گیزەری غازی",
+    gasText:"هەڵبژاردەی جۆراوجۆر بۆ بەکارهێنانی ماڵ و شوێنی بازرگانی.",
+    electricTitle:"گیزەری کارەبایی",
+    electricText:"سیستەمی کارەبایی بە کوالێتی بەرز و دیزاینی گونجاو.",
+    dualTitle:"دوو سیستەم",
+    dualText:"گیزەری غازی و کارەبایی بۆ بەکارهێنانی زیاتر و ئاسانتر.",
+    aboutTitle:"دەربارەی ئێمە",
+    aboutText:"جیهانی گیزەری دانا پێشکەشکاری جۆرەها گیزەری کوالێتی بەرزە، بۆ ماڵ، کۆمپانیا و پڕۆژەکان.",
+    contactTitle:"پەیوەندی",
+    contactText:"زانیاری ژمارەی تەلەفۆن، ناونیشان و سۆشیال میدیا لێرە دادەنرێت.",
+    footerText:"© 2026 جیهانی گیزەری دانا - هەموو مافەکان پارێزراون"
+  },
+
+  ar:{
+    dir:"rtl",
+    brand:"عالم سخانات دانا",
+    navHome:"الرئيسية",
+    navProducts:"المنتجات",
+    navAbout:"من نحن",
+    navContact:"اتصل بنا",
+    heroTitle:"عالم سخانات دانا",
+    heroText:"سخانات عالية الجودة للمنازل والمشاريع، مع خيارات متنوعة من أنظمة الغاز والكهرباء.",
+    heroButton:"عرض المنتجات",
+    heroImageText:"مكان صورة السخان الرئيسية",
+    productsTitle:"منتجاتنا",
+    gasTitle:"سخانات الغاز",
+    gasText:"خيارات متعددة للاستخدام المنزلي والتجاري.",
+    electricTitle:"السخانات الكهربائية",
+    electricText:"أنظمة كهربائية بجودة عالية وتصميم مناسب.",
+    dualTitle:"النظام المزدوج",
+    dualText:"سخانات تعمل بالغاز والكهرباء لمرونة أكبر.",
+    aboutTitle:"من نحن",
+    aboutText:"عالم سخانات دانا يوفر مجموعة متنوعة من السخانات عالية الجودة للمنازل والشركات والمشاريع.",
+    contactTitle:"اتصل بنا",
+    contactText:"سيتم إضافة رقم الهاتف والعنوان وروابط التواصل الاجتماعي هنا.",
+    footerText:"© 2026 عالم سخانات دانا - جميع الحقوق محفوظة"
+  },
+
+  en:{
+    dir:"ltr",
+    brand:"Dana Water Heater World",
+    navHome:"Home",
+    navProducts:"Products",
+    navAbout:"About Us",
+    navContact:"Contact",
+    heroTitle:"Dana Water Heater World",
+    heroText:"High-quality water heaters for homes and projects, with a wide range of gas and electric systems.",
+    heroButton:"View Products",
+    heroImageText:"Main water heater image",
+    productsTitle:"Our Products",
+    gasTitle:"Gas Water Heaters",
+    gasText:"Multiple options for residential and commercial use.",
+    electricTitle:"Electric Water Heaters",
+    electricText:"High-quality electric systems with practical designs.",
+    dualTitle:"Dual System",
+    dualText:"Gas and electric water heaters for greater flexibility.",
+    aboutTitle:"About Us",
+    aboutText:"Dana Water Heater World provides a wide selection of high-quality water heaters for homes, companies and projects.",
+    contactTitle:"Contact",
+    contactText:"Phone number, address and social media information will be added here.",
+    footerText:"© 2026 Dana Water Heater World - All Rights Reserved"
+  }
+};
+
+function setLanguage(lang){
+  const t=translations[lang];
+  document.documentElement.lang=lang;
+  document.documentElement.dir=t.dir;
+
+  Object.keys(t).forEach(key=>{
+    if(key==="dir") return;
+    const el=document.getElementById(key);
+    if(el) el.textContent=t[key];
+  });
+}
+</script>
+
+</body>
+</html>
